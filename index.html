@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090b">
+  <meta
+    name="description"
+    content="Crie camisas personalizadas para times, marcas, eventos e projetos especiais com a StyleFit."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="StyleFit | Sua camisa, seu estilo">
+  <meta
+    property="og:description"
+    content="Escolha o modelo, personalize cada detalhe e vista uma ideia que é só sua."
+  >
+  <meta property="og:image" content="__STYLEFIT_SOCIAL_IMAGE__">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="__STYLEFIT_SOCIAL_IMAGE__">
+  <title>StyleFit | Camisas personalizadas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="#inicio" aria-label="StyleFit, página inicial">
+        <span class="brand-mark" aria-hidden="true">
+          <span>S</span><span>F</span>
+        </span>
+        <span class="brand-name">Style<span>Fit</span></span>
+      </a>
+
+      <nav class="site-nav" id="mainNav" aria-label="Navegação principal">
+        <a class="is-active" href="#inicio" data-nav-link>Início</a>
+        <a href="#modelos" data-nav-link>Modelos</a>
+        <a href="#como-funciona" data-nav-link>Como funciona</a>
+        <a href="#sobre" data-nav-link>Sobre nós</a>
+        <a href="#contato" data-nav-link>Contato</a>
+
+        <div class="mobile-nav-actions">
+          <a href="#contato">Minha conta</a>
+          <a href="#modelos">Ver meu carrinho</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a class="account-link" href="#contato">
+          <span class="account-avatar" aria-hidden="true">L</span>
+          <span>
+            <strong>Olá, Lucas</strong>
+            <small>Minha conta</small>
+          </span>
+        </a>
+
+        <button class="cart-button" type="button" data-cart-button aria-label="Carrinho, nenhum item">
+          <span class="cart-symbol" aria-hidden="true"></span>
+          <span class="cart-copy">Carrinho</span>
+          <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+        </button>
+      </div>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" data-section>
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Personalização sem complicação</p>
+          <h1>
+            Sua camisa.<br>
+            Seu estilo.<br>
+            <span>100% você.</span>
+          </h1>
+          <p class="hero-description">
+            Transforme sua ideia em uma camisa exclusiva. Escolha o modelo,
+            combine cores e adicione os detalhes que fazem sentido para você.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#modelos">
+              Personalizar agora <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-secondary" href="#modelos">
+              Ver catálogo
+            </a>
+          </div>
+
+          <ul class="hero-benefits" aria-label="Benefícios StyleFit">
+            <li>
+              <span aria-hidden="true">01</span>
+              <p><strong>Sem pedido mínimo</strong>Crie uma ou várias peças.</p>
+            </li>
+            <li>
+              <span aria-hidden="true">02</span>
+              <p><strong>Prévia antes de produzir</strong>Aprove cada detalhe.</p>
+            </li>
+            <li>
+              <span aria-hidden="true">03</span>
+              <p><strong>Entrega para todo o Brasil</strong>Acompanhe o pedido.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-aura" aria-hidden="true"></div>
+          <img
+            class="hero-product"
+            src="assets/stylefit-hero-shirts.png"
+            alt="Duas camisas esportivas personalizadas, uma preta e uma branca, com detalhes verdes e roxos"
+            width="1536"
+            height="1024"
+            fetchpriority="high"
+          >
+
+          <aside class="custom-card" aria-label="Etapas iniciais de personalização">
+            <p class="card-label">Crie do seu jeito</p>
+            <h2>Do modelo à sua ideia.</h2>
+            <ol>
+              <li><span>1</span> Escolha a camisa</li>
+              <li><span>2</span> Defina cores e arte</li>
+              <li><span>3</span> Aprove a prévia</li>
+            </ol>
+            <a href="#modelos">Começar agora <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-rail" aria-label="Categorias de camisas">
+      <div class="category-shell">
+        <a href="#modelos">
+          <span class="category-icon category-icon-casual" aria-hidden="true"></span>
+          <span><strong>Casual</strong><small>Para o dia a dia</small></span>
+        </a>
+        <a href="#modelos">
+          <span class="category-icon category-icon-sport" aria-hidden="true"></span>
+          <span><strong>Esportiva</strong><small>Performance e estilo</small></span>
+        </a>
+        <a href="#modelos">
+          <span class="category-icon category-icon-company" aria-hidden="true"></span>
+          <span><strong>Corporativa</strong><small>Vista sua marca</small></span>
+        </a>
+        <a href="#modelos">
+          <span class="category-icon category-icon-event" aria-hidden="true"></span>
+          <span><strong>Eventos</strong><small>Uma lembrança única</small></span>
+        </a>
+        <a class="category-all" href="#modelos">
+          <span class="category-grid" aria-hidden="true"></span>
+          <span><strong>Ver todos</strong><small>Explore os modelos</small></span>
+          <b aria-hidden="true">→</b>
+        </a>
+      </div>
+    </section>
+
+    <section class="products-section" id="modelos" data-section>
+      <div class="section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Destaques</p>
+            <h2>Comece pelo seu modelo favorito.</h2>
+          </div>
+          <p>
+            Escolha uma base e teste combinações de cor. A personalização
+            completa acontece na próxima etapa.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article
+            class="product-card"
+            data-product-card
+            data-product="Camiseta Abstract"
+            style="--shirt-color: #111318; --shirt-accent: #b7f52a;"
+          >
+            <div class="product-topline">
+              <span class="product-tag product-tag-green">Novo</span>
+              <button class="favorite-button" type="button" aria-label="Favoritar Camiseta Abstract" aria-pressed="false">♡</button>
+            </div>
+            <div class="product-visual" aria-hidden="true">
+              <span class="shirt-preview">
+                <span class="shirt-collar"></span>
+                <span class="shirt-art"></span>
+                <span class="shirt-signature">SF</span>
+              </span>
+            </div>
+            <div class="product-info">
+              <h3>Camiseta Abstract</h3>
+              <p>Algodão premium · modelagem regular</p>
+              <strong>R$ 129,90</strong>
+              <small>ou 6x de R$ 21,65 sem juros</small>
+              <div class="swatch-row" role="group" aria-label="Cores da Camiseta Abstract">
+                <button
+                  class="swatch is-selected"
+                  type="button"
+                  aria-label="Preta com detalhe verde"
+                  aria-pressed="true"
+                  data-color-name="preta com detalhe verde"
+                  data-shirt-color="#111318"
+                  data-shirt-accent="#b7f52a"
+                  style="--swatch: #111318; --swatch-accent: #b7f52a;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Roxa com detalhe verde"
+                  aria-pressed="false"
+                  data-color-name="roxa com detalhe verde"
+                  data-shirt-color="#472178"
+                  data-shirt-accent="#b7f52a"
+                  style="--swatch: #472178; --swatch-accent: #b7f52a;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Branca com detalhe roxo"
+                  aria-pressed="false"
+                  data-color-name="branca com detalhe roxo"
+                  data-shirt-color="#e8e8e4"
+                  data-shirt-accent="#7a36d8"
+                  style="--swatch: #e8e8e4; --swatch-accent: #7a36d8;"
+                ></button>
+              </div>
+              <button class="select-product" type="button" data-select-product aria-pressed="false">
+                Escolher modelo
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="product-card"
+            data-product-card
+            data-product="Polo Signature"
+            style="--shirt-color: #e8e8e4; --shirt-accent: #7a36d8;"
+          >
+            <div class="product-topline">
+              <span class="product-tag product-tag-purple">Mais vendido</span>
+              <button class="favorite-button" type="button" aria-label="Favoritar Polo Signature" aria-pressed="false">♡</button>
+            </div>
+            <div class="product-visual" aria-hidden="true">
+              <span class="shirt-preview shirt-preview-polo">
+                <span class="shirt-collar"></span>
+                <span class="shirt-art"></span>
+                <span class="shirt-signature">SF</span>
+              </span>
+            </div>
+            <div class="product-info">
+              <h3>Polo Signature</h3>
+              <p>Piquet macio · acabamento premium</p>
+              <strong>R$ 159,90</strong>
+              <small>ou 6x de R$ 26,65 sem juros</small>
+              <div class="swatch-row" role="group" aria-label="Cores da Polo Signature">
+                <button
+                  class="swatch is-selected"
+                  type="button"
+                  aria-label="Branca com detalhe roxo"
+                  aria-pressed="true"
+                  data-color-name="branca com detalhe roxo"
+                  data-shirt-color="#e8e8e4"
+                  data-shirt-accent="#7a36d8"
+                  style="--swatch: #e8e8e4; --swatch-accent: #7a36d8;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Preta com detalhe verde"
+                  aria-pressed="false"
+                  data-color-name="preta com detalhe verde"
+                  data-shirt-color="#111318"
+                  data-shirt-accent="#b7f52a"
+                  style="--swatch: #111318; --swatch-accent: #b7f52a;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Verde com detalhe preto"
+                  aria-pressed="false"
+                  data-color-name="verde com detalhe preto"
+                  data-shirt-color="#91c92c"
+                  data-shirt-accent="#111318"
+                  style="--swatch: #91c92c; --swatch-accent: #111318;"
+                ></button>
+              </div>
+              <button class="select-product" type="button" data-select-product aria-pressed="false">
+                Escolher modelo
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="product-card"
+            data-product-card
+            data-product="Camisa Match Pro"
+            style="--shirt-color: #15251a; --shirt-accent: #b7f52a;"
+          >
+            <div class="product-topline">
+              <span class="product-tag product-tag-green">Esportiva</span>
+              <button class="favorite-button" type="button" aria-label="Favoritar Camisa Match Pro" aria-pressed="false">♡</button>
+            </div>
+            <div class="product-visual" aria-hidden="true">
+              <span class="shirt-preview shirt-preview-sport">
+                <span class="shirt-collar"></span>
+                <span class="shirt-art"></span>
+                <span class="shirt-signature">10</span>
+              </span>
+            </div>
+            <div class="product-info">
+              <h3>Camisa Match Pro</h3>
+              <p>Dry fit respirável · alta performance</p>
+              <strong>R$ 179,90</strong>
+              <small>ou 6x de R$ 29,98 sem juros</small>
+              <div class="swatch-row" role="group" aria-label="Cores da Camisa Match Pro">
+                <button
+                  class="swatch is-selected"
+                  type="button"
+                  aria-label="Verde escura com detalhe lima"
+                  aria-pressed="true"
+                  data-color-name="verde escura com detalhe lima"
+                  data-shirt-color="#15251a"
+                  data-shirt-accent="#b7f52a"
+                  style="--swatch: #15251a; --swatch-accent: #b7f52a;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Preta com detalhe roxo"
+                  aria-pressed="false"
+                  data-color-name="preta com detalhe roxo"
+                  data-shirt-color="#111318"
+                  data-shirt-accent="#7a36d8"
+                  style="--swatch: #111318; --swatch-accent: #7a36d8;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Branca com detalhe verde"
+                  aria-pressed="false"
+                  data-color-name="branca com detalhe verde"
+                  data-shirt-color="#e8e8e4"
+                  data-shirt-accent="#70c932"
+                  style="--swatch: #e8e8e4; --swatch-accent: #70c932;"
+                ></button>
+              </div>
+              <button class="select-product" type="button" data-select-product aria-pressed="false">
+                Escolher modelo
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="product-card"
+            data-product-card
+            data-product="Oversized Pulse"
+            style="--shirt-color: #3b2065; --shirt-accent: #a96cff;"
+          >
+            <div class="product-topline">
+              <span class="product-tag product-tag-purple">Oversized</span>
+              <button class="favorite-button" type="button" aria-label="Favoritar Oversized Pulse" aria-pressed="false">♡</button>
+            </div>
+            <div class="product-visual" aria-hidden="true">
+              <span class="shirt-preview shirt-preview-wide">
+                <span class="shirt-collar"></span>
+                <span class="shirt-art"></span>
+                <span class="shirt-signature">SF</span>
+              </span>
+            </div>
+            <div class="product-info">
+              <h3>Oversized Pulse</h3>
+              <p>Malha encorpada · caimento amplo</p>
+              <strong>R$ 139,90</strong>
+              <small>ou 6x de R$ 23,32 sem juros</small>
+              <div class="swatch-row" role="group" aria-label="Cores da Oversized Pulse">
+                <button
+                  class="swatch is-selected"
+                  type="button"
+                  aria-label="Roxa com detalhe lilás"
+                  aria-pressed="true"
+                  data-color-name="roxa com detalhe lilás"
+                  data-shirt-color="#3b2065"
+                  data-shirt-accent="#a96cff"
+                  style="--swatch: #3b2065; --swatch-accent: #a96cff;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Preta com detalhe verde"
+                  aria-pressed="false"
+                  data-color-name="preta com detalhe verde"
+                  data-shirt-color="#111318"
+                  data-shirt-accent="#b7f52a"
+                  style="--swatch: #111318; --swatch-accent: #b7f52a;"
+                ></button>
+                <button
+                  class="swatch"
+                  type="button"
+                  aria-label="Areia com detalhe roxo"
+                  aria-pressed="false"
+                  data-color-name="areia com detalhe roxo"
+                  data-shirt-color="#c8bda9"
+                  data-shirt-accent="#7a36d8"
+                  style="--swatch: #c8bda9; --swatch-accent: #7a36d8;"
+                ></button>
+              </div>
+              <button class="select-product" type="button" data-select-product aria-pressed="false">
+                Escolher modelo
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="como-funciona" data-section>
+      <div class="section-shell process-shell">
+        <div class="process-heading">
+          <p class="eyebrow">Experiência StyleFit</p>
+          <h2>Personalizar é simples.</h2>
+          <p>Você acompanha cada escolha antes da produção.</p>
+        </div>
+
+        <ol class="process-list">
+          <li>
+            <span>01</span>
+            <div><strong>Escolha</strong><p>Selecione o modelo ideal para o seu projeto.</p></div>
+          </li>
+          <li>
+            <span>02</span>
+            <div><strong>Personalize</strong><p>Combine cores, arte, nome e número.</p></div>
+          </li>
+          <li>
+            <span>03</span>
+            <div><strong>Aprove</strong><p>Veja a prévia e ajuste o que precisar.</p></div>
+          </li>
+          <li>
+            <span>04</span>
+            <div><strong>Receba</strong><p>Nós produzimos e entregamos para você.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="trust-section" id="sobre" data-section aria-label="Diferenciais StyleFit">
+      <div class="section-shell trust-grid">
+        <article>
+          <span aria-hidden="true">A</span>
+          <div><h2>Acabamento premium</h2><p>Estampa e bordado feitos para durar.</p></div>
+        </article>
+        <article>
+          <span aria-hidden="true">T</span>
+          <div><h2>Tecidos selecionados</h2><p>Conforto para diferentes rotinas.</p></div>
+        </article>
+        <article>
+          <span aria-hidden="true">S</span>
+          <div><h2>Compra segura</h2><p>Seus dados protegidos em cada etapa.</p></div>
+        </article>
+        <article>
+          <span aria-hidden="true">C</span>
+          <div><h2>Cuidado de verdade</h2><p>Atendimento próximo antes e depois.</p></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contato" data-section>
+    <div class="section-shell footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#inicio" aria-label="StyleFit, voltar ao início">
+          <span class="brand-mark" aria-hidden="true">
+            <span>S</span><span>F</span>
+          </span>
+          <span class="brand-name">Style<span>Fit</span></span>
+        </a>
+        <p>
+          Camisas personalizadas para vestir marcas, times, eventos
+          e ideias que merecem sair do papel.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <strong>Navegue</strong>
+        <a href="#modelos">Modelos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#sobre">Sobre nós</a>
+      </div>
+
+      <div class="footer-column">
+        <strong>Fale com a gente</strong>
+        <a href="mailto:contato@stylefit.com.br">contato@stylefit.com.br</a>
+        <a href="tel:+5585999990000">(85) 99999-0000</a>
+        <span>Seg. a sex. · 9h às 18h</span>
+      </div>
+    </div>
+
+    <div class="section-shell footer-bottom">
+      <span>© <span data-current-year></span> StyleFit.</span>
+      <span>Feito para você criar sem limites.</span>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true" data-toast></div>
+
+  <noscript>
+    <p class="noscript-message">Ative o JavaScript para testar as cores e selecionar um modelo.</p>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
