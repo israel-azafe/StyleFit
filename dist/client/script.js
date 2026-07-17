@@ -10,6 +10,10 @@ const cartCount = document.querySelector("[data-cart-count]");
 const toast = document.querySelector("[data-toast]");
 const year = document.querySelector("[data-current-year]");
 const mobileQuery = window.matchMedia("(max-width: 960px)");
+const finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const heroProduct = document.querySelector("[data-hero-product]");
+const tiltCard = document.querySelector("[data-tilt-card]");
 
 let selectedCard = null;
 let toastTimer;
@@ -80,6 +84,70 @@ function selectProduct(card) {
 
 function handleBreakpointChange() {
   closeMenu();
+}
+
+function resetPointerEffect(element, variables, activeClass) {
+  element.classList.remove(activeClass);
+
+  Object.entries(variables).forEach(([name, value]) => {
+    element.style.setProperty(name, value);
+  });
+}
+
+function enablePointerEffect(element, options) {
+  if (!element) return;
+
+  let frameId = 0;
+  let pointerX = 0.5;
+  let pointerY = 0.5;
+
+  const reset = () => {
+    window.cancelAnimationFrame(frameId);
+    frameId = 0;
+    resetPointerEffect(element, options.reset, options.activeClass);
+  };
+
+  const render = () => {
+    frameId = 0;
+
+    if (!finePointerQuery.matches || reducedMotionQuery.matches) {
+      reset();
+      return;
+    }
+
+    const rotateX = (0.5 - pointerY) * options.maxRotateX;
+    const rotateY = (pointerX - 0.5) * options.maxRotateY;
+    const shiftX = (pointerX - 0.5) * options.maxShiftX;
+    const shiftY = (pointerY - 0.5) * options.maxShiftY;
+
+    element.classList.add(options.activeClass);
+    element.style.setProperty(options.rotateXVariable, `${rotateX.toFixed(2)}deg`);
+    element.style.setProperty(options.rotateYVariable, `${rotateY.toFixed(2)}deg`);
+
+    if (options.shiftXVariable) {
+      element.style.setProperty(options.shiftXVariable, `${shiftX.toFixed(2)}px`);
+      element.style.setProperty(options.shiftYVariable, `${shiftY.toFixed(2)}px`);
+    }
+
+    element.style.setProperty(options.glowXVariable, `${(pointerX * 100).toFixed(1)}%`);
+    element.style.setProperty(options.glowYVariable, `${(pointerY * 100).toFixed(1)}%`);
+  };
+
+  element.addEventListener("pointermove", (event) => {
+    if (!finePointerQuery.matches || reducedMotionQuery.matches) return;
+
+    const rect = element.getBoundingClientRect();
+    pointerX = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
+    pointerY = Math.min(1, Math.max(0, (event.clientY - rect.top) / rect.height));
+
+    if (!frameId) {
+      frameId = window.requestAnimationFrame(render);
+    }
+  });
+
+  element.addEventListener("pointerleave", reset);
+  reducedMotionQuery.addEventListener("change", reset);
+  finePointerQuery.addEventListener("change", reset);
 }
 
 navToggle.addEventListener("click", () => {
@@ -192,6 +260,46 @@ cartButton.addEventListener("click", () => {
 
   selectedCard.scrollIntoView({ behavior: "smooth", block: "center" });
   showToast(`${selectedCard.dataset.product} está pronta para personalizar.`);
+});
+
+enablePointerEffect(heroProduct, {
+  activeClass: "is-hovering",
+  maxRotateX: 7,
+  maxRotateY: 10,
+  maxShiftX: 16,
+  maxShiftY: 10,
+  rotateXVariable: "--product-tilt-x",
+  rotateYVariable: "--product-tilt-y",
+  shiftXVariable: "--product-shift-x",
+  shiftYVariable: "--product-shift-y",
+  glowXVariable: "--product-glow-x",
+  glowYVariable: "--product-glow-y",
+  reset: {
+    "--product-tilt-x": "0deg",
+    "--product-tilt-y": "0deg",
+    "--product-shift-x": "0px",
+    "--product-shift-y": "0px",
+    "--product-glow-x": "50%",
+    "--product-glow-y": "50%"
+  }
+});
+
+enablePointerEffect(tiltCard, {
+  activeClass: "is-tilting",
+  maxRotateX: 12,
+  maxRotateY: 14,
+  maxShiftX: 0,
+  maxShiftY: 0,
+  rotateXVariable: "--card-tilt-x",
+  rotateYVariable: "--card-tilt-y",
+  glowXVariable: "--card-glow-x",
+  glowYVariable: "--card-glow-y",
+  reset: {
+    "--card-tilt-x": "0deg",
+    "--card-tilt-y": "0deg",
+    "--card-glow-x": "50%",
+    "--card-glow-y": "50%"
+  }
 });
 
 year.textContent = String(new Date().getFullYear());

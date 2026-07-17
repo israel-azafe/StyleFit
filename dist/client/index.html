@@ -116,17 +116,28 @@
         </div>
 
         <div class="hero-media">
-          <div class="hero-aura" aria-hidden="true"></div>
-          <img
-            class="hero-product"
-            src="assets/stylefit-hero-shirts.png"
-            alt="Duas camisas esportivas personalizadas, uma preta e uma branca, com detalhes verdes e roxos"
-            width="1536"
-            height="1024"
-            fetchpriority="high"
+          <div
+            class="hero-product-stage"
+            data-hero-product
+            aria-label="Camisas personalizadas em destaque"
           >
+            <div class="hero-aura" aria-hidden="true"></div>
+            <div class="hero-pointer-glow" aria-hidden="true"></div>
+            <img
+              class="hero-product"
+              src="assets/camisa-hero1.png"
+              alt="Duas camisas personalizadas, uma vinho e uma branca com detalhes verdes"
+              width="500"
+              height="500"
+              fetchpriority="high"
+            >
+          </div>
 
-          <aside class="custom-card" aria-label="Etapas iniciais de personalização">
+          <aside
+            class="custom-card"
+            data-tilt-card
+            aria-label="Etapas iniciais de personalização"
+          >
             <p class="card-label">Crie do seu jeito</p>
             <h2>Do modelo à sua ideia.</h2>
             <ol>
